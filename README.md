@@ -24,6 +24,24 @@ This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.
 ## Installation
 * Clone this repository: `git clone "https://github.com/alexaorrico/AirBnB_clone.git"`
 * Access AirBnb directory: `cd AirBnB_clone`
+* Activate Your Virtual Environment
+```
+#1 initialize environment with the name .venv
+> python3 -m venv .venv
+
+#2 activate the environment
+# on window
+> .venv/Scripts/activate
+# on macOS and Linux
+> source .venv/bin/activate
+
+#3 install dependencies
+> pip3 install -r requirements.txt
+
+#4 when ever you install new dependencies run the following on the root folder of the project
+> pip3 freeze > requirements.txt
+
+```
 * Run hbnb(interactively): `./console` and enter command
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
 
@@ -154,8 +172,9 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
-Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
-Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
+Asheanfi Goitom - [Github](https://github.com/ashGHub) / [Twitter](https://twitter.com/goitomash)  
+Tsinat Tsegaye - [Github](https://github.com/tsinatshimels) / [Twitter](https://twitter.com/Tsinat_Tsegaye)
+
 
 Second part of Airbnb: Joann Vuong
 ## License
