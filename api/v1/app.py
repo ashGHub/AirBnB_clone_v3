@@ -4,7 +4,7 @@ Module for AirBnB clone startup api
 Mainly contains app entry point and cross concerns
 """
 from api.v1.views import app_views
-from flask import Flask
+from flask import Flask, jsonify, make_response
 from models import storage
 from os import getenv
 
@@ -21,6 +21,15 @@ def teardown(exception):
     This will remove the current SQLAlchemy Session
     """
     storage.close()
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    """
+    404 page not found handler
+    """
+    result = jsonify({'error': 'Not found'})
+    return make_response(result, 404)
 
 
 if __name__ == "__main__":
