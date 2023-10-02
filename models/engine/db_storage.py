@@ -40,6 +40,13 @@ class DBStorage:
         if HBNB_ENV == "test":
             Base.metadata.drop_all(self.__engine)
 
+    def get(self, cls, id):
+        """query on the current database session"""
+        if cls is None or id is None:
+            return None
+        obj = self.__session.query(cls).filter_by(id=id).first()
+        return obj
+
     def all(self, cls=None):
         """query on the current database session"""
         new_dict = {}
@@ -58,6 +65,10 @@ class DBStorage:
     def save(self):
         """commit all changes of the current database session"""
         self.__session.commit()
+
+    def count(self, cls=None):
+        """returns the number of objects of the specified class"""
+        return len(self.all(cls))
 
     def delete(self, obj=None):
         """delete from the current database session obj if not None"""
